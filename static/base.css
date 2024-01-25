@@ -1,0 +1,42 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px; /* ロゴのサイズを調整 */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav a {
+  width: 20px; /* 画像の初期の幅を設定 */
+  height: 20px; /* 画像の初期の高さを設定 */
+  vertical-align: middle; /* テキストと画像を垂直方向に中央揃え */
+  transition: transform 0.2s ease; /* アニメーションの効果を追加 */
+}
+
+nav a:hover {
+  transform: scale(1.1); /* ホバー時に画像を1.1倍に拡大 */
+}

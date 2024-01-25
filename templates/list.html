@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<link rel="stylesheet" href="/static/base.css">
+<header>
+  <div class="alien-font" style="font-size:35px;"><font color="#FFFFFF">ALIEN.</font></div>
+  <nav>
+    <ul>
+      <li><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="35" viewBox="0 0 32 35" fill="none">
+        <path d="M19 1.25C17.2222 -0.0833334 14.7778 -0.0833334 13 1.25L2 9.5C0.740971 10.4443 0 11.9262 0 13.5V30C0 32.7614 2.23858 35 5 35V35C7.76142 35 10 32.7614 10 30V26C10 23.2386 12.2386 21 15 21H17C19.7614 21 22 23.2386 22 26V30C22 32.7614 24.2386 35 27 35V35C29.7614 35 32 32.7614 32 30V13.5C32 11.9262 31.259 10.4443 30 9.5L19 1.25Z" fill="white"/>
+      </svg></a></li>
+
+      <li><a href="{% url 'formapp:form' %}"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M26.5263 32.6275H3.78947V9.4738H17.0526V5.68433H3.78947C1.70526 5.68433 0 7.38959 0 9.4738V32.2106C0 34.2949 1.70526 36.0001 3.78947 36.0001H26.5263C28.6105 36.0001 30.3158 34.2949 30.3158 32.2106V18.9475H26.5263V32.6275Z" fill="white"/>
+        <path d="M30.316 0H26.5265V5.68421H20.8423C20.8612 5.70316 20.8423 9.47368 20.8423 9.47368H26.5265V15.1389C26.5454 15.1579 30.316 15.1389 30.316 15.1389V9.47368H36.0002V5.68421H30.316V0Z" fill="white"/>
+        <path d="M22.7368 13.2632H7.57886V17.0527H22.7368V13.2632Z" fill="white"/>
+        <path d="M7.57886 18.9473V22.7367H22.7368V18.9473H17.0525H7.57886Z" fill="white"/>
+        <path d="M22.7368 24.6316H7.57886V28.4211H22.7368V24.6316Z" fill="white"/>
+        </svg></a></li>
+        
+        <li><a href="{% url 'formapp:list' %}"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="34" viewBox="0 0 31 34" fill="none">
+            <mask id="path-1-inside-1_99_38" fill="white">
+              <rect width="31" height="34" rx="3"/>
+            </mask>
+            <rect width="31" height="34" rx="3" stroke="white" stroke-width="8" mask="url(#path-1-inside-1_99_38)"/>
+            <line x1="9" y1="9.5" x2="22" y2="9.5" stroke="white" stroke-width="3"/>
+            <line x1="9" y1="15.5" x2="22" y2="15.5" stroke="white" stroke-width="3"/>
+          </svg></a></li>
+      <!-- <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+      <li><a href="{% url 'accounts:login' %}">Login</a></li> -->
+    </ul>
+  </nav>
+  <p style="text-align: right">
+    <a href="{% url 'accounts:logout' %}" class="btn btn-primary">Logout</a></p>
+</header>
+<div class="container">
+  {% for post in object_list %}
+  <div class="post">
+    <p>タイトル：{{ post.title }}</p>
+    <p>メモ：{{ post.memo }}</p>
+    <p>--------------------</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
