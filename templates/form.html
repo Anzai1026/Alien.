@@ -33,11 +33,17 @@
   <p style="text-align: right">
     <a href="{% url 'accounts:logout' %}" class="btn btn-primary">Logout</a></p>
 </header>
-<form method="POST">
+<form  method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="h1 mt-5 pt-5">What is happening?</div>
-      <p><input type="text" name="title" value="" placeholder="Tittle"></p>
-      <p><input type="text" name="memo" value="" placeholder="Memo"></p>
-      <input type="submit" class="btn btn-primary" value="投稿する">
+    <!-- <div class="h1 mt-5 pt-5">What is happening?</div> -->
+
+    <div class ="image">
+      {{ form.image }}
+    </div>
+      <p><input type="text" name="title" value="" placeholder="What is happening?"></p>
+      <!-- <p><input type="text" name="memo" value="" placeholder="Memo"></p> -->
+      <button type="submit" class="btn btn-primary">Login</button>
+
+      <!-- <input type="submit" class="btn btn-primary" value="Post"> -->
     </form>
     {% endblock %}

@@ -1,5 +1,8 @@
 from django.db import models
-
+import datetime
 class PostModel(models.Model):
-    title = models.CharField(max_length=50)
-    memo = models.TextField()
+    author = models.CharField(max_length=20, null=True)
+    image = models.ImageField(upload_to='images', blank=True, null=True)
+    title = models.CharField(max_length=32)
+    published_date = models.DateTimeField(blank=True, null=True, default=datetime.datetime.now())
+

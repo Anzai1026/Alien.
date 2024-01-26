@@ -33,13 +33,21 @@
   <p style="text-align: right">
     <a href="{% url 'accounts:logout' %}" class="btn btn-primary">Logout</a></p>
 </header>
-<div class="container">
+<div class="container mx-auto">
   {% for post in object_list %}
-  <div class="post">
+  <div class="card col-md-4 col-md-offset-4 center-block mx-auto" style="width: 20rem;">
+    <img src="/{{ post.image }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><p>{{ post.title }}</p></h5>
+      <!-- <p class="card-text">{{ post.memo }}</p> -->
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <!-- <div class="post">
     <p>タイトル：{{ post.title }}</p>
     <p>メモ：{{ post.memo }}</p>
     <p>--------------------</p>
-  </div>
+  </div> -->
   {% endfor %}
 </div>
 {% endblock %}
