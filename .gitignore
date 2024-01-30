@@ -1,3 +1,4 @@
 fomapp/images
 account/__pycache__
 *.pyc
+__pycache__/
