@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
+{% block head %}
+{% load widget_tweaks %}
+{% endblock %}
+
 {% block title %}
+
 <link rel="stylesheet" href="/static/base.css">
 <header>
   <div class="alien-font" style="font-size:35px;"><font color="#FFFFFF">ALIEN.</font></div>
@@ -40,6 +45,9 @@
 
     <div class ="image" style="padding-top: 10%;">
       {{ form.image }}
+      {% render_field form.author value=user.account_id style="display:none" %}
+      {% render_field form.first_name value=user.first_name style="display:none" %}
+      {% render_field form.last_name value=user.last_name style="display:none" %}
     </div>
       <p><textarea type="text" class="terea" name="title" value="" placeholder="What is happening?"></textarea>
       <!-- <p><input type="text" name="memo" value="" placeholder="Memo"></p> -->
