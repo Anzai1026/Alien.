@@ -13,10 +13,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.logo img {
-  width: 50px; /* ロゴのサイズを調整 */
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 nav ul {
@@ -24,6 +23,8 @@ nav ul {
   display: flex;
   justify-content: flex-start;
   padding: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 nav ul li {
