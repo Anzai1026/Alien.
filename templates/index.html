@@ -37,19 +37,19 @@
 </header>
 <!-- <div class="h1">MyPage</div> -->
 {% else %}
-<div class="h1 mt-5 pt-5 alien-font" style="font-size:80px;"><font color="#000000">ALIEN.</font></div>
+<div class="mt-5 pt-5 alien-font" style="font-size:100px;"><font color="#000000">ALIEN.</font></div>
 {% endif %}
 {% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-<div class="h2" style="padding-top: 10%;">Welcome {{ user.first_name }} {{ user.last_name }} !</div>
+<div class="alien-font" style="padding-top: 10%; font-size:100px;">Welcome {{ user.first_name }} {{ user.last_name }} !</div>
 <!-- <p style="text-align: right">
     <a href="{% url 'accounts:logout' %}" class="btn btn-primary">Logout</a>
   </p> -->
 <!-- <a href="{% url 'formapp:form' %}" class="btn btn-primary">Post</a> -->
 {% else %}
-<a href="{% url 'accounts:signup' %}" class="fs-4 btn btn-primary">Signup</a>
-<a href="{% url 'accounts:login' %}" class="fs-4 btn btn-primary">Login</a>
+<a href="{% url 'accounts:signup' %}" class="fs-5 btn btn-primary">Signup</a>
+<a href="{% url 'accounts:login' %}" class="fs-5 btn btn-primary">Login</a>
 {% endif %}
 {% endblock %}
